@@ -1,8 +1,8 @@
-FROM centos:8
+FROM centos:7
 LABEL maintainer="Marcel Hecko"
 
 RUN yum install -y centos-release-scl && yum clean all
-RUN yum install -y http://yum.centreon.com/standard/19.04/el7/stable/noarch/RPMS/centreon-release-19.04-1.el7.centos.noarch.rpm && yum clean all
+RUN yum install -y http://yum.centreon.com/standard/19.10/el7/stable/noarch/RPMS/centreon-release-19.10-1.el7.centos.noarch.rpm && yum clean all
 RUN yum install -y  openssh-clients git perl-libwww-perl perl-XML-LibXML perl-Class-MethodMaker perl-Crypt-SSLeay perl-SOAP-Lite perl-TimeDate centreon-plugin-Virtualization-VMWare-daemon perl-Sys-Syslog && yum clean all
 
 EXPOSE 5700
