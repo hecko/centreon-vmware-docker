@@ -1,0 +1,10 @@
+FROM centos:7
+LABEL maintainer="Marcel Hecko"
+
+RUN yum install -y centos-release-scl && yum clean all
+RUN yum install -y https://yum.centreon.com/standard/20.10/el7/stable/noarch/RPMS/centreon-release-20.10-2.el7.centos.noarch.rpm && yum clean all
+RUN yum install -y openssh-clients git perl-libwww-perl perl-XML-LibXML perl-Class-MethodMaker perl-Crypt-SSLeay perl-SOAP-Lite perl-TimeDate perl-Sys-Syslog && yum clean all
+RUN yum install -y centreon-plugin-Virtualization-VMWare-daemon && yum clean all
+
+EXPOSE 5700
+EXPOSE 5701
